@@ -1,0 +1,133 @@
+:root {
+    /* Ночная тема */
+--bg: #292A29;
+--bg2: #3A3B3A;
+
+--pretitle: #A47A26;
+--title: #ffffff;
+--text-color: #D7D7D7;
+--bg-btn: #F5CD76;
+--color-btn: #3A3B3A;
+
+--cikle: #2F2F2F;
+}
+
+
+@media (max-width: 720px) {
+    .nav-list {
+        display: none;
+    }
+
+    /* Фиксация навигачнихо меню  */
+    .nav.open .nav-row {
+        z-index: 7;
+        position: fixed;
+        width: 90%;
+    } 
+
+    /* кнопка навигации */
+    .nav-btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-btn span {
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--bg-btn);
+        transition: all 0.5s;
+        z-index: 9;
+    }
+    
+    .nav-btn span:nth-of-type(2) {
+        top: calc(50% - 10px);
+    }
+    .nav-btn span:nth-of-type(3) {
+        top: calc(50% + 10px);
+
+    }
+
+    
+    .nav.open .nav-btn span:nth-of-type(1) {
+        display: none;
+    }
+
+    .nav.open .nav-btn span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+    }
+
+    .nav.open .nav-btn span:nth-of-type(3) {
+        top:50%;
+        transform: translate(-50%, 0) rotate(-45deg);
+    }
+
+
+
+/* меню навигации */
+    .nav.open .nav-list {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: var(--bg2);
+        z-index: 6;
+        flex-direction: column;
+        row-gap: 40px;justify-content: center;
+    }
+    .nav.open .naw-btn {
+        z-index: 7;
+        position: fixed;
+        top: 45px;
+        right:30px;
+    }
+    .nav.open .dark-mode-btn {
+        background-color: var(--bg);
+    }
+
+
+}
+
+@media (max-width: 620px ) {
+
+    .conteiner {
+        max-width: 620px;
+        padding: 0 15px;
+    }
+   
+    .head-title {
+        font-size: 46px;
+        line-height: 60px;
+    }
+
+    .title {
+        font-size: 43px
+    }
+
+    .submit-form {
+        padding: 28px 18px;
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+        background-color: var(--bg);
+        row-gap: 10px;
+        border-radius: 15px;
+    }
+    
+    input {
+        background-color: var(--bg2);
+        width: 260px;
+        height: 39px;
+        padding-left: 10px;
+    }
+
+}
